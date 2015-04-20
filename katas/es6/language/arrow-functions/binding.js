@@ -1,3 +1,4 @@
+var assert = require('assert');
 // 6: arrow functions - binding
 // To do: make all tests pass, leave the asserts unchanged!
 
@@ -12,7 +13,7 @@ describe('arrow functions have lexical `this`, no dynamic `this`', () => {
   it('can NOT bind a different context', function() {
     var bound = new LexicallyBound();
     var fn = bound.getFunction();
-    var anotherObj = {};
+    var anotherObj = bound;
     assert.strictEqual(fn.call(anotherObj), anotherObj);
   });
 
@@ -28,12 +29,12 @@ class LexicallyBound {
 
   getFunction() {
     return () => {
-      return new LexicallyBound();
+      return this;
     }
   }
 
   getArgumentsFunction() {
-    return function() {return arguments}
+    return () => arguments
   }
 
 }
