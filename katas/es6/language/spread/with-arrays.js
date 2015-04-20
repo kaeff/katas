@@ -30,7 +30,7 @@ describe('spread with arrays', () => {
       };
       fn(magicNumbers);
     });
-  
+
     it('pass an array of numbers to Math.max()', function() {
       const max = Math.max(...[23, 0, 42, 43]);
       assert.equal(max, 42);

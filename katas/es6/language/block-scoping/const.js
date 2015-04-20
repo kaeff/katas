@@ -18,13 +18,13 @@ describe('`const` is like `let` plus read-only', () => {
     });
 
   });
-  
+
   const notChangeable = 23;
 
   it('const scope leaks too', () => {
     assert.equal(notChangeable, 23);
   });
-  
+
   describe('complex types are NOT fully read-only', () => {
 
     it('array', () => {
@@ -32,13 +32,13 @@ describe('`const` is like `let` plus read-only', () => {
       arr[0] = 0;
       assert.equal(arr[0], 42);
     });
-    
+
     it('object', () => {
       const obj = {x: 1};
       obj.x = 2;
       assert.equal(obj.x, 3);
     });
-    
+
   });
 
 });

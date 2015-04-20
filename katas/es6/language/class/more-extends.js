@@ -6,10 +6,10 @@ describe('class can inherit from another', () => {
   it('extend an `old style` "class", a function, still works', () => {
     let A;
     class B extends A {}
-    
+
     assert.equal(new B() instanceof A, true);
   });
-  
+
   describe('prototypes are as you know them', () => {
     class A {}
     class B extends A {}
@@ -28,16 +28,16 @@ describe('class can inherit from another', () => {
     it('like the inline assignment of the parent class', () => {
       let A;
       class B extends (A = {}) {}
-      
+
       assert.equal(new B() instanceof A, true);
     });
-    
+
     it('or calling a function that returns the parent class', () => {
       const returnParent = (beNull) => beNull ? null : class {};
       class B extends (returnParent) {}
-      
+
       assert.equal(Object.getPrototypeOf(B.prototype), null);
     });
   });
-  
+
 });

@@ -13,17 +13,17 @@ describe('destructuring arrays makes shorter code', () => {
     [x, y] = [x, y];
     assert.deepEqual([x, y], ['why', 'ax']);
   });
-  
+
   it('leading commas', () => {
     const all = ['ax', 'why', 'zet'];
     const [,z] = all;
     assert.equal(z, 'zet');
   });
-  
+
   it('extract from nested arrays', () => {
     const user = [['Some', 'One'], 23];
     const [firstName, surname, age] = user;
-    
+
     const expected = 'Some One = 23 years';
     assert.equal(`${firstName} ${surname} = ${age} years`, expected);
   });

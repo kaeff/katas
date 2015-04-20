@@ -2,7 +2,7 @@
 // To do: make all tests pass, leave the asserts unchanged!
 
 describe('arrow functions', function() {
-  
+
   it('are shorter to write', function() {
     var func = () => {
       return 'I am func';

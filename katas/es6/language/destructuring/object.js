@@ -23,13 +23,13 @@ describe('destructuring objects', () => {
       assert.equal(lang, 'ES6');
     });
   });
-  
+
   describe('interesting', () => {
     it('missing refs become undefined', () => {
       const {z} = {x: 1, z: 2};
       assert.equal(z, void 0);
     });
-  
+
     it('destructure from builtins (string)', () => {
       const {substr} = 1;
       assert.equal(substr, String.prototype.substr);

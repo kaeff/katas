@@ -12,7 +12,7 @@ describe('destructuring function parameters', () => {
       const user = {name: 'Wolfram', id: 42};
       fn(user);
     });
-    
+
     it('multiple params from array/object', () => {
       const fn = ([{name}]) => {
         assert.equal(name, 'Alice');
@@ -30,7 +30,7 @@ describe('destructuring function parameters', () => {
       };
       fn(23);
     });
-    
+
     it('for a missing array value', () => {
       const defaultUser = {id: 23, name: 'Joe'};
       const fn = ([user]) => {
@@ -38,7 +38,7 @@ describe('destructuring function parameters', () => {
       };
       fn([]);
     });
-    
+
     it('mix of parameter types', () => {
       const fn = (id, [arr], {obj}) => {
         assert.equal(id, 1);
