@@ -1,4 +1,6 @@
-let curry = (fn) => undefined;
+let curry = (fn) => (nextArg) => {
+  return (depth === 1) ? fn(nextArg) : curry(fn.bind(this, nextArg), depth-1);
+}
 
 describe('curry', () => {
   it('transforms a multi-arg function into a sequence of unary functions', () => {
@@ -30,7 +32,6 @@ describe('curry', () => {
     assert.equal(k(obj), obj);
     assert.equal(curry(k)(obj), obj);
   });
-
 
   it('pop one argument form the argument list until args are exhausted', () => {
     function add2(a, b) {
