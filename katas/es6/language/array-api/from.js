@@ -4,10 +4,10 @@
 describe('`Array.from` converts an array-like object or list into an Array', () => {
 
   const arrayLike = {0: 'one', 1: 'two', length: 2};
-  
+
   it('call `Array.from` with an array-like object', function() {
-    const arr = arrayLike;
-    
+    const arr = Array.from(arrayLike);
+
     assert.deepEqual(arr, ['one', 'two']);
   });
   
